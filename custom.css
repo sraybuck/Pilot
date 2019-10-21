@@ -1,0 +1,81 @@
+tei-hyperdiv {
+  display: none;
+}
+tei-teiheader {
+  display: none;
+}
+tei-cb {
+  display: none;
+}
+tei-lb{
+  display: none;
+}
+tei-head {
+  font-size: 2em;
+}
+tei-figdesc {
+  display: none;
+}
+tei-stage{
+  font-size: 1em;
+  text-decoration: underline;
+}
+tei-fw{
+  display: none;
+}
+#TEI {
+  padding-top: 2em;
+}
+html{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+}
+#annotation{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: #F27405;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.navbg{
+  background-color: #F2CAA7;
+}
+ul.nav{
+  list-style-type: none;
+  margin-bottom: 1em;
+  margin: auto;
+  width: 100%;
+  padding: 0em;
+  overflow: hidden;
+  background-color: #F2CAA7;
+}
+
+ul.nav li {
+  float: left;
+}
+ul.nav li#headline{
+  text-align: center;
+  padding: 1em 2em 1em 0em;
+}
+
+ul.nav li a {
+  display: block;
+  color: 	#383838;
+  text-align: center;
+  padding: 1em 2em;
+  text-decoration: none;
+}
+
+ul.nav li a:hover:not(.active) {
+  background-color: #F27405;
+}
+
+ul.nav li a.active {
+  color: 	#383838;
+  background-color: #F27405;
+}
