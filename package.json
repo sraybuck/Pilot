@@ -29,5 +29,8 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "dev": "npm run build && http-server -p 8888 & onchange src -- npm run build"
+  },
+  "dependencies": {
+    "liquid": "^4.0.0"
   }
 }
