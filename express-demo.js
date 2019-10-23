@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-//var $ = require('jQuery');
+var $ = require('jQuery');
 
 var { Liquid } = require('liquidjs');
 var engine = new Liquid();
@@ -8,7 +8,7 @@ var engine = new Liquid();
 var app = express();
 
 app.engine('liquid', engine.express());
-
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 app.set('views', path.resolve(__dirname, "views"));
 
 app.set('view engine', 'liquid');
