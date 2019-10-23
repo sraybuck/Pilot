@@ -30,18 +30,14 @@ app.get("/", (req, res) => {
     let rawpage = fs.readFileSync("site/index.json");
     //parse json and make new variable
     let page = JSON.parse(rawpage);
-    //log output
-
-
-    console.log(page);
     //render page data using the base template
     res.render("base.liquid", {content : page.title});
 });
-//render /test page
-app.get("/test", (req, res) => {
+//render /collection page
+app.get("/collection", (req, res) => {
 
     //let today = new Date();
-    res.render("page.liquid", {content: "filename"});
+    res.render("base.liquid", {content: "filename"});
 });
 
 //render 404 page
