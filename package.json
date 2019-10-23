@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jQuery": "^1.7.4",
     "liquid": "^4.0.0",
     "liquidjs": "^9.1.1",
     "node-fetch": "^2.6.0"
