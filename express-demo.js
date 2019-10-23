@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-var $ = require('jQuery');
+//var $ = require('jQuery');
 
 var { Liquid } = require('liquidjs');
 var engine = new Liquid();
