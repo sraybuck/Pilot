@@ -26,10 +26,8 @@ app.use(express.static('static'));
 
 //when a user looks at the base page, this is what loads
 app.get("/", (req, res) => {
-    //create local variable rawpage of unparsed json
-    let rawpage = fs.readFileSync("site/index.json");
-    //parse json and make new variable
-    let page = JSON.parse(rawpage);
+    //parse json from index file
+    let page = JSON.parse(fs.readFileSync("site/index.json"));
     //render page data using the base template
     res.render("base.liquid", {content : page.title});
 });
