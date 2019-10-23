@@ -1,19 +1,14 @@
 {
-  "name": "CETEIcean",
-  "version": "1.1.1",
-  "description": "JavaScript library to load a TEI XML document and register it as HTML5 custom elements.",
+  "name": "Dadie Prototype",
+  "version": "1.0.0",
+  "description": "Web app using CETEIcean and liquid templating to create an easy to use interface for presenting digital editions",
   "main": "src/CETEI.js",
-  "keywords": [
-    "TEI",
-    "XML",
-    "HTML5 custom elements",
-    "ODD"
-  ],
-  "author": "Raff Viglianti and Hugh Cayless",
+  "keywords": [],
+  "author": "Suzanne Raybuck",
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TEIC/CETEIcean.git"
+    "url": "https://github.com/sraybuck/CETEIcean-prototype.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
