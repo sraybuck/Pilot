@@ -22,7 +22,7 @@ app.set('views', path.resolve(__dirname, "views"));
 app.set('view engine', 'liquid');
 
 //tell app where the static resources are
-app.use(express.static('static'));
+app.use(express.static('site'));
 
 //when a user looks at the base page, this is what loads
 app.get("/", (req, res) => {
@@ -32,11 +32,30 @@ app.get("/", (req, res) => {
     res.render("base.liquid", {content : page.title});
 });
 //render /collection page
-app.get("/collection", (req, res) => {
-
-    //let today = new Date();
-    res.render("base.liquid", {content: "filename"});
+app.get("/collections", (req, res) => {
+    res.render("toc.liquid", {content: "Collections", files: "ODFN, RandomStuff"});
 });
+
+//try to iterate through ODFN
+app.get("/ODFN", (req, res) => {
+  res.render("toc.liquid", {content: "ODFN", files: fs.readdirSync("site/ODFN/")});
+});
+
+//iterate through Random Stuff
+app.get("/RandomStuff", (req, res) => {
+  res.render("toc.liquid", {content: "Random Stuff", files: fs.readdirSync("site/RandomStuff")});
+});
+
+//iterate through ODFN folder
+app.get('/ODFN/:file', (req, res) => {
+  res.render("page.liquid", {content: req.params.file+".xml"});
+});
+
+
+app.get('/RandomStuff/:file', (req, res) => {
+  res.render("page.liquid", {content: req.params.file+".xml"});
+});
+
 
 //render 404 page
 app.use((req, res) => {
