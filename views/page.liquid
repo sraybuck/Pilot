@@ -3,10 +3,10 @@
 <div class="container">
   <div id="TEI">
   </div>
-  <script src="../dist/CETEI.js"></script>
+  <script src="../assets/CETEI.js"></script>
   <script>
     var CETEIcean = new CETEI();
-    CETEIcean.getHTML5({{ content }}, function(data) {
+    CETEIcean.getHTML5( "{{content}}", function(data) {
       document.getElementById("TEI").innerHTML = "";
       document.getElementById("TEI").appendChild(data);
       CETEIcean.addStyle(document, data);
@@ -18,4 +18,5 @@
     // });
 
   </script>
- {% endblock %}
+  </div>
+{% endblock %}
