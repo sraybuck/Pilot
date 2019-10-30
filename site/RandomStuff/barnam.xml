@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <editorialDecl>
+            <interpretation>
+               <ab>
+                  <interpGrp type="fonts">
+                     <interp xml:id="serif">Fonts that are serif</interp>
+                     <interp xml:id="sansSerif">Fonts that are sans serif</interp>
+                     <interp xml:id="border">Fonts that have a border</interp>
+                     <interp xml:id="small">Fonts that are small-ish</interp>
+                     <interp xml:id="medium">Fonts that are medium</interp>
+                     <interp xml:id="large">Fonts that are large</interp>
+                     <interp xml:id="decorative">Fonts that have unique decoration</interp>
+                  </interpGrp>
+               </ab>
+            </interpretation>
+         </editorialDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body rend="align(center)">
+         <div type="advertisement">
+            <head rend="case(allcaps)"><hi ana="#medium #serif">Barnum's</hi>
+               <lb/><hi ana="#large #serif">American Museum</hi>
+            </head>
+            <ab><hi ana="#border #sansSerif #large">PERFORMANCES</hi>
+               <lb/><hi ana="#large #serif">AFTERNOON &amp; EVENING
+               <lb/>SECOND WEEK</hi>
+               <lb/><hi ana="#small #serif">Of the EXTRAORDINARY ATTRACTIVE Domestic Drama of</hi>
+               <lb/><hi ana="#large #serif">NEIGHBOR
+               <lb/>JACKWOOD</hi>
+               <lb/><hi ana="#small #serif">The Success of which is truly</hi>
+               <lb/><hi ana="#medium #serif">Brilliant beyond all Parallel</hi>
+               <lb/><hi ana="#small #serif">And the interest of which</hi>
+               <lb/><hi ana="#medium #serif">SURPASSES IN POWER AND INTENSITY</hi>
+               <lb/><hi ana="#small #serif">Everything in the History of the Modern Stage.
+               <lb/>THIS</hi>
+               <lb/><hi ana="#large #serif #decorative">AFTERNOON &amp; EVENING</hi>
+               <lb/><hi ana="#small #serif">One of the most</hi>
+               <lb/><hi ana="#large #serif">Thrilling Life Stories</hi>
+               <lb/><hi ana="#small #serif">EVER PRESENTED.</hi>
+               <lb/><hi ana="#large #serif">WEDNESDAY</hi>
+               <lb/><date when="1857-05-13"><hi ana="#small #serif">May 13th, 1857.</hi></date>
+               <lb/><hi ana="#medium #serif">This Afternoon at 2 1/2 o'clock,</hi>
+               <lb/><hi ana="#small #serif">(Instead of 3, on account of the length of the performance.) and also this</hi>
+               <lb/><hi ana="#medium #serif">Evening at 7 1/2 o'clock,</hi>
+               <lb/><hi ana="#small #serif">The new domestic Drama, in five acts, by J. T. Trowbridge, Esq., entitled</hi>
+               <lb/><hi ana="#large #serif">NEIGHBOR</hi>
+               <lb/><hi ana="#large #decorative">JACKWOOD</hi>
+            </ab>
+               <floatingText>
+                  <body>
+                     <div type="castList">
+                        <castList ana="#small #serif">
+                           <castItem><role>Neighbor Jackwood</role><actor>Mr. C. W. Clarke</actor></castItem>
+                           <castItem><role>Hector Dunbury</role><actor>Mr. Levick</actor></castItem>
+                           <cb n="1"/>
+                              <castItem><role rend="fill(.)">Enos Crumlett</role><actor>Mr.Hadaway</actor></castItem>
+                              <castItem><role rend="fill(.)">Squire Greenwich</role><actor>Mr. J. Lingard</actor></castItem>
+                              <castItem><role rend="fill(.)">Robert Greenwich</role><actor>Mr. E. F. Taylor</actor></castItem>
+                              <castItem><role rend="fill(.)">Abimelech</role><actor>Miss Orten</actor></castItem>
+                              <castItem><role rend="fill(.)">Mr. Rukey</role><actor>Mr. Havelock</actor></castItem>
+                              <castItem><role rend="fill(.)">Dickson</role><actor>Mr. Bridgeman</actor></castItem>
+                           <cb n="2"/>
+                              <castItem><role rend="fill(.)">Oliver Dole</role><actor>Mr. J. Herbert</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">Landlord</roleDesc><actor>Mr. Duncalf</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">Sheriff</roleDesc><actor>Mr. Cunningham</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">Lawyer</roleDesc><actor>Mr. Gowan</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">1st Lounger</roleDesc><actor>Mr. Henry</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">2nd Lounger</roleDesc><actor>Mr. Gritman</actor></castItem>
+                              <castItem><role rend="fill(.)">Camille, (Charlotte)</role><actor>Miss Mestayer</actor></castItem>
+                           <cb n="1"/>
+                              <castItem><role rend="fill(.)">Mrs. Jackwood</role><actor>Miss Palmer</actor></castItem>
+                              <castItem><role rend="fill(.)">Grandmother Rigglesty</role><actor>Mrs. France</actor></castItem>
+                              <castItem><role rend="fill(.)">Matilda Fosdick</role><actor>Mrs. Eldridge</actor></castItem>
+                              <castItem><role rend="fill(.)">Ph&#339;be Jackson</role><actor>Miss A. France</actor></castItem>
+                           <cb n="2"/>
+                              <castItem><role rend="fill(.)">Bertha Rukely</role><actor>Mrs.Lingard</actor></castItem>
+                              <castItem><role rend="fill(.)">Mrs. Greenwich</role><actor>Mrs. Dickson</actor></castItem>
+                              <castItem><role rend="fill(.)">Etty Greenwich</role><actor>Miss Sheffield</actor></castItem>
+                              <castItem><role rend="fill(.)">Mrs Sperkley</role><actor>Miss Leslie</actor></castItem>
+                              <castItem><roleDesc rend="fill(.)">Villagers,</roleDesc></castItem><castItem><roleDesc>Sheriff's Officers,</roleDesc></castItem><castItem><roleDesc>Yankee Gals, &amp;c.</roleDesc></castItem>
+                        </castList>
+                     </div>
+                  </body>
+               </floatingText>
+            <ab><hi ana="#small #serif">New Scenery Incidental to the Piece.</hi>
+               <lb/><hi rend="align(left)" ana="#small #serif">Farmer Jackwood's Kitchen. Exterior of New England Farm House
+               <lb/>and Yard. The Interval. The Interval Inundated. Interior of a Country
+               <lb/>Jail. Interior of the Court House.</hi>
+            </ab>
+         </div>
+         <div type="review">
+            <head rend="break(yes)"><hi ana="#medium #serif">BARNUM'S AMERICAN MUSEUM</hi></head>
+            <ab><hi ana="#small #serif">Cor. Broadway and Ann St., opposite St. Paul's Church:</hi>
+               <lb/><hi ana="#small #serif">Admittance to the whole Museum, the Picture Gallery, the Natural History Department, the Happy
+               <lb/> Family, and the Cosmorama Room, as well as the Entertainments in the Lecture Room..25 Cents
+               <lb/>Children under 10 years.........12 1-2 Cents. Seats in the Parquet and First Balcony..One Shilling extra
+               <lb/>MORNING VISITORS ADMITTED TO THE AFTERNOON PERFORMANCES FREE.</hi>
+               <lb/><hi ana="#medium #serif">THE NEW</hi>
+               <lb/><hi ana="#large #serif">MANAGEMENT</hi>
+               <lb/><hi ana="#small #serif">Feel it a duty to express their gratitude at</hi>
+               <lb/><hi ana="#medium #serif">The Remarkable Success</hi>
+               <lb/><hi ana="#small #serif">Which has attended, for the past twelve-month, their endeavors to provide for an appreciative
+               <lb/>public, a</hi>
+               <lb/><hi ana="#medium #serif">PLACE OF INTELLECTUAL ENTERTAINMENT</hi>
+               <lb/><hi ana="#small #serif">Worthy of the general approbation, and one that should commend itself to the popular regard, as well
+               <lb/>for its</hi>
+               <lb/><hi ana="#medium #serif">SPIRIT OF PUBLIC ENTERPRISE</hi>
+               <lb/><hi ana="#small #serif">AS FOR THE</hi>
+               <lb/><hi ana="#large #border #sansSerif">NOVELTY AND AMUSEMENT</hi>
+               <lb/><hi ana="#small #serif">Characteristic of its peculiar performances. It is a satisfaction to be able conscientiously to add, that
+               <lb/>the Museum, during the year 1856, was attended by</hi>
+               <lb/><hi ana="#large #serif">Over half a Million of Visitors</hi>
+               <lb/><hi ana="#small #serif">A patronage, which, it is thought, has not been surpassed, if equalled by that of any place of similar resort for pastime in the
+               <lb/>world. As every Dollar of</hi>
+               <lb/><hi ana="#medium #serif">THE PROFIT HAS BEEN EXPENDED
+               <lb/>IN IMPROVEMENTS</hi>
+               <lb/><hi ana="#small #serif">Upon the Establishment itself&#8212;in perfecting the details of its business,</hi>
+               <lb/><hi ana="#medium #serif">INCREASING ITS ATTRACTIONS</hi>
+               <lb/><hi ana="#small #serif">In every possible manner&#8212;in maintaining</hi>
+               <lb/><hi ana="#medium #serif">A Prodigal Supply of Curiosities</hi>
+               <lb/><hi ana="#small #serif">Both Living and Inanimate&#8212;In searching for the Four Quarters of the Globe for every thing UNIQUE AND INTERESTING,
+               <lb/>worthy of purchase and preservation, the Management conceives that the</hi>
+               <lb/><hi ana="#medium #serif">UNPARALLELED PROSPERITY</hi>
+               <lb/><hi ana="#small #serif">of</hi>
+               <lb/><hi ana="#large #sansSerif">THE MUSEUM</hi>
+               <lb/><hi rend="align(left)" ana="#small #serif">May be regarded, not only as a compliment to their own judgement, and to the taste of their visitors, but as a guaruntee of their
+               <lb/>unswerving determination to merit the flattering favors they enjoy.</hi>
+            </ab> 
+         </div>
+         <div type="advertisement">
+            <ab><hi ana="#small #serif">The size of the Serpent that tempted Eve may be gathered, instructively, from the</hi>
+               <lb/><hi ana="#large #serif">SEA-SERPENT LIKE SNAKE</hi>
+               <lb/><hi ana="#small #serif">That among the crowd of Anacondas and Boa Constrictors of enormous proportion in the</hi>
+               <lb/><hi ana="#large #serif">Den of Living Reptiles</hi>
+               <hi ana="#small #serif"><lb/>to be seen here, stretches forth like Milton's Monster, who</hi>
+            </ab>
+            <floatingText>
+               <body>
+                  <lg rend="align(left)">
+                     <l rend="indent(5)pre(')"><hi ana="#small #serif">"-----Extended long and large,</hi></l>
+                     <l><hi ana="#small #serif">Lay floating many a rood ; in bulk as large</hi></l>
+                     <l><hi ana="#small #serif">As whom the fables named -----</hi></l>
+                     <l><hi ana="#small #serif">Titanian, or Earth-born that warr'd on Jove,</hi></l>
+                     <l><hi ana="#small #serif">Bri&#230;ros or Typhon, whom the den</hi></l>
+                     <l><hi ana="#small #serif">By ancient Tarsus held, or that sea beast</hi></l>
+                     <l><hi ana="#small #serif">Leviathan, which God of all his works</hi></l>
+                     <l rend="post(')"><hi ana="#small #serif">Created hugest."</hi></l>
+                  </lg>
+               </body>
+            </floatingText>
+            <ab><hi ana="#medium #serif">THESE SERPENTS
+               <lb/>EAT LIVING ANIMALS BEFORE THE VISITORS</hi>
+               <lb/><hi ana="#small #serif">when they feed, and the process of deglutiton with them, is one of the most marvellous in existence.</hi>
+               <lb/><hi ana="#large #serif">THE HAPPY FAMILY</hi>
+               <lb/><hi ana="#small #serif">Which is too well known to be described,</hi>
+               <add rend="align(left)" place="below" hand="#small">ht4000047</add>
+            </ab>
+         </div>
+      </body>
+   </text>
+</TEI>
