@@ -79,3 +79,20 @@ ul.nav li a.active {
   color: 	#383838;
   background-color: #F27405;
 }
+input {
+  border-radius: .2em;
+  font-family: inherit;
+  font-size: 1.25em;
+  padding: 0.5em;
+  margin: .7em 0em .7em 0em;
+  width: 90%;
+}
+.result li{
+  list-style: none;
+}
+.results{
+  line height: 1.2em;
+}
+.result p{
+  margin: 0px;
+}
