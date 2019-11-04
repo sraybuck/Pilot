@@ -26,36 +26,30 @@ app.use(express.static('site'));
 
 //when a user looks at the base page, this is what loads
 app.get("/", (req, res) => {
-    //parse json from index file
-    let page = JSON.parse(fs.readFileSync("site/index.json"));
-    //render page data using the base template
-    res.render("base.liquid", {content : page.title});
+  res.render("base.liquid", {content: fs.readFileSync('site/home.html')});
 });
-//render /collection page
-app.get("/collections", (req, res) => {
-    res.render("toc.liquid", {content: "Collections", files: "ODFN, RandomStuff"});
+//render contact page
+app.get("/contact", (req, res) => {
+  res.render("base.liquid", {content: fs.readFileSync('site/contact.html')});
+});
+
+//render about page
+app.get("/about", (req, res) => {
+  res.render("base.liquid", {content: fs.readFileSync('site/about.html')});
 });
 
 //try to iterate through ODFN
-app.get("/ODFN", (req, res) => {
-  res.render("toc.liquid", {content: "ODFN", files: fs.readdirSync("site/ODFN/")});
+app.get("/collection", (req, res) => {
+  res.render("toc.liquid", {content: "Collection", files: fs.readdirSync("site/collection/")});
 });
 
-//iterate through Random Stuff
-app.get("/RandomStuff", (req, res) => {
-  res.render("toc.liquid", {content: "Random Stuff", files: fs.readdirSync("site/RandomStuff")});
+app.get("/search", (req, res) => {
+  res.render("base.liquid", {content: fs.readFileSync('site/search.html')});
 });
-
 //iterate through ODFN folder
-app.get('/ODFN/:file', (req, res) => {
-  res.render("page.liquid", {content: req.params.file+".xml"});
+app.get('/collection/:file', (req, res) => {
+  res.render("page.liquid", {filename: req.params.file+".xml"});
 });
-
-
-app.get('/RandomStuff/:file', (req, res) => {
-  res.render("page.liquid", {content: req.params.file+".xml"});
-});
-
 
 //render 404 page
 app.use((req, res) => {
