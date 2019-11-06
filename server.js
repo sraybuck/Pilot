@@ -56,12 +56,14 @@ app.get("/search", (req, res) => {
   res.render("base.liquid", {content: fs.readFileSync('site/search.html')});
 });
 
-//try to iterate through ODFN
+//render table of contents page for collection
 app.get("/collection", (req, res) => {
   res.render("toc.liquid", {content: "Collection", files: fs.readdirSync("site/collection/")});
 });
 
-//iterate through ODFN folder
+//iterate through collection folder and generate a new page for each TEI file
+//the ":" specifies a dummy variable "file" that represents each item that matches that pattern inside the collection folder
+//within the liquid brackets, 'req.params.file+".xml"'' refers back to the file dummy variable and appends a .xml extension to it to get the right filename to pass to CETEIcean
 app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", {filename: req.params.file+".xml"});
 });
