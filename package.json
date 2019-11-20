@@ -1,5 +1,5 @@
 {
-  "name": "HumPBaCK",
+  "name": "Pilot",
   "version": "1.0.0",
   "description": "Web app using CETEIcean and liquid templating to create an easy to use interface for presenting digital editions",
   "main": "src/CETEI.js",
