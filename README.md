@@ -57,11 +57,11 @@ The majority of Pilot’s functionality is located in three places: the CETEI.js
 In order to generate a typical page of content, the server.js file will use the render() method to render a page. When we use render(), it takes two arguments, a template and then any variable or information we want to pass to local content within that template. We use the filename of the liquid template for the template argument and then we use a string or variable within liquid brackets for the local content.
 
 For example, here is the code that renders the base page:
-
+```
   app.get("/", (req, res) => {
     res.render("base.liquid", {content: fs.readFileSync('site/home.html')});
     });
-
+```
 There is more information and examples of this commented within the server.js file.
 
 To generate a page using a TEI file, Pilot uses the fs module in node.js to read all your TEI files in the collections directory, make a unique route for each one and then hand them off to the template page which then plugs the filename into the corresponding argument in the CETEIcean script in the template. Then whenever you access “baseurl.com/collections/yourfilename” your TEI file will appear there in the HTML form provided by CETEIcean. Again, see the server.js file for comments explaining how this works more in-depth.
@@ -75,16 +75,16 @@ For people who aren’t very experienced with web apps and simply want to use th
 ## What TEI Renders out of the Box?
 
 Without any styling, CETEIcean will render every TEI element in the original XML file. This leads to incredibly cluttered HTML that has every piece of encoded information that you included in the original document, which is hardly ideal. The way to change what gets displayed and how is by editing the custom.css file. In this file you can use the custom element names that CETEIcean created to affect how specific elements are rendered. For example, if you want to get rid of all the line breaks that you encoded, you simply read the HTML and find out what CETEIcean output the <lb> element as, in this case it is <tei-lb>. Then you go to the custom.css file and add a new block of code that styles the <tei-lb> element as follows:
-
+```
   tei-lb{
     display: none;
   }
-
+```
 The above code will prevent the browser from rendering the lb element at all. If you want to simply adjust the styling instead of getting rid of elements, you can also use css. Take this example code for styling stage  directions:
-
+```
   tei-stage{
     font-size: 1em;
     text-decoration: underline;
   }
-
-The CSS specifies that the font is 1em large and that the text shoud be underlined. You can use CSS to make small or large changes to the display depending on how you want to represent certain elements. The w3schools.com has an [authoritative tutorial](https://www.w3schools.com/css/default.asp) on how to begin using CSS for those that are unfamiliar. 
+```
+The CSS specifies that the font is 1em large and that the text shoud be underlined. You can use CSS to make small or large changes to the display depending on how you want to represent certain elements. The w3schools.com has an [authoritative tutorial](https://www.w3schools.com/css/default.asp) on how to begin using CSS for those that are unfamiliar.
