@@ -1,4 +1,4 @@
-# Pilot
+# Pilot: Publishing Interface for Literary Objects in TEI 
 
 ## Basic Overview
 Pilot is a Node.js web app that utilizes CETEIcean javascript library to create a customizable digital publication tool that easily displays large amounts of TEI files in the browser with minimal code.
