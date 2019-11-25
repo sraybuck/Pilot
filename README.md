@@ -20,7 +20,7 @@ To begin, you need to have node and node package manager (npm) installed on your
 For a quick setup, simply place all your TEI files inside of site/collection/ and then run “node server.js” from the root folder. Your web application will be running on port 3000 and you should be able to access all your TEI files by filename on the http://localhost:3000/collection/ page.
 
 ## Structure of Pilot
-
+```
 ├── LICENSE.md
 ├── README.md
 ├── node_modules
@@ -49,7 +49,7 @@ For a quick setup, simply place all your TEI files inside of site/collection/ an
     ├── nav.liquid (navigation menu)
     ├── page.liquid (CETEIcean script embedded in a regular page for displaying digital edition)
     └── toc.liquid (table of contents page that gets its list from a specified directory)
-
+```
 ## How it Works
 
 The majority of Pilot’s functionality is located in three places: the CETEI.js file, the server.js file, and the views folder. CETEI.js is from CETEIcean by Hugh Cayless and Raffaele Viglianti. We used their javascript library to handle transforming TEI to HTML within the browser. The server.js file lays out how the web server works and all of the routing, which connects the templates from views/ folder to content and assets located in the site/ folder. The views/ folder contains all of the liquid templates that are combined and matched with content from site/ to create every page on the website.
