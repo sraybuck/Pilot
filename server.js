@@ -66,10 +66,34 @@ app.get("/collection", (req, res) => {
 The ":" specifies a dummy variable "file" that represents each item that matches that pattern inside the collection folder.
 
 Within the liquid brackets, 'req.params.file+".xml"'' refers back to the file dummy variable and appends a .xml extension to it to get the right filename to pass to CETEIcean*/
+
+
 app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", {filename: req.params.file+".xml"});
 });
 
+//testing with markdown and yaml
+app.get("/test", (req, res) => {
+res.render("base.liquid", {content: fs.readFileSync('site/anthem.md')})
+});
+/*
+app.get('/collection/:file', (req, res) => {
+  var files = fs.readdirSync('site/collection/');
+  if (req.params.file.includes(".xml") == true){
+    console.log("XML")
+    res.render("page.liquid", {filename: req.params.file+".xml"});
+  }
+  else if (req.params.file.includes(".md") == true){
+    console.log("MD")
+    console.log(fs.readFileSync(req.params.file+".md"))
+    res.render("base.liquid", {content: "it works!~"});
+  }
+  else {
+    console.log("NEITHER")
+    res.render("page.liquid", {filename: BS});
+  }
+});
+*/
 //render 404 page
 app.use((req, res) => {
     res.statusCode = 404;
@@ -81,3 +105,6 @@ app.listen(3000, () => {
 
     console.log("Application started on port 3000");
 })
+
+var files = fs.readdirSync('site/collection/');
+console.log(files);
