@@ -72,9 +72,18 @@ app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", {filename: req.params.file+".xml"});
 });
 
+
+
 //testing with markdown and yaml
 app.get("/test", (req, res) => {
-res.render("base.liquid", {content: fs.readFileSync('site/anthem.md')})
+  var yaml = {
+    /*layout: "poem",
+    title: "Anthem for Doomed Youth",
+    author: "Wilfred Owen",
+    source: "Poems by Wilfred Owen (1921)"*/
+    fs.readFileSync('site/anthem.json')
+  }
+  res.render("test.liquid", yaml )
 });
 /*
 app.get('/collection/:file', (req, res) => {
@@ -104,7 +113,4 @@ app.use((req, res) => {
 app.listen(3000, () => {
 
     console.log("Application started on port 3000");
-})
-
-var files = fs.readdirSync('site/collection/');
-console.log(files);
+});
