@@ -6,6 +6,7 @@
   <script>
     var CETEIcean = new CETEI();
     CETEIcean.getHTML5( "{{filename}}", function(data) {
+      //parse out data variable
       document.getElementById("TEI").innerHTML = "";
       document.getElementById("TEI").appendChild(data);
       CETEIcean.addStyle(document, data);
