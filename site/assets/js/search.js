@@ -8,10 +8,11 @@ var index = elasticlunr(function () {
   this.addField('content')
 });
 
+var files = {}
+files.push("lINK OUT TO OTHER TEXT FILE");
 //add the content to the index
 //ITERATE
-var collection = fs.readdirSync("site/collection/");
-console.log(collection);
+
 /*index.addDoc({
   title: {{}}
 });*/
