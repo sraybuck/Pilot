@@ -74,18 +74,47 @@ app.get('/collection/:file', (req, res) => {
 
 
 
-//testing with markdown and yaml
-app.get("/test", (req, res) => {
-  var yaml = {
-    /*layout: "poem",
+  
+
+//testing with reading files
+app.get('/test', (req, res) => {
+  
+  var content = new Object ();
+  mid = [];
+  raw = fs.readFileSync('site/anthem.txt', 'utf-8').split("\n");
+  for (i in raw){
+    mid.push(raw[i]);
+  }
+  content.layout = mid[0];
+  content.title = mid[1];
+  content.author = mid[2];
+  content.source = mid[3];
+  
+  //content.push()
+  //console.log(content[0]);
+  /*var data = new Object ();
+  
+  data.layout = "poem";
+  data.title = "Anthem for Doomed Youth";
+  data.author = "Wilfred Owen";
+  data.source = "Poems by Wilfred Owen (1921)";
+  /*{
+    layout: "poem",
     title: "Anthem for Doomed Youth",
     author: "Wilfred Owen",
-    source: "Poems by Wilfred Owen (1921)"*/
-    fs.readFileSync('site/anthem.json')
-  }
-  res.render("test.liquid", yaml )
+    source: "Poems by Wilfred Owen (1921)"
+  }*/
+  /*console.log(typeof data);
+  console.log(data);
+  console.log(data.title)*/
+  //console.log(data[title]);
+
+
+  res.render("test.liquid", content);
 });
+
 /*
+Testing with different filetypes going into collection page
 app.get('/collection/:file', (req, res) => {
   var files = fs.readdirSync('site/collection/');
   if (req.params.file.includes(".xml") == true){
