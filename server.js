@@ -38,27 +38,65 @@ Keep in mind that different liquid templates will have different places where {c
 
 //when a user looks at the base page, this is what loads
 app.get("/", (req, res) => {
-  res.render("base.liquid", {content: fs.readFileSync('site/home.html')});
+  fs.readFile('site/home.html', 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", {content: data});
+  });
 });
 
 //render contact page
 app.get("/contact", (req, res) => {
-  res.render("base.liquid", {content: fs.readFileSync('site/contact.html')});
+  fs.readFile('site/contact.html', 'utf-8', (err,data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", {content: data})
+  });
 });
 
 //render about page
 app.get("/about", (req, res) => {
-  res.render("base.liquid", {content: fs.readFileSync('site/about.html')});
+  fs.readFile('site/about.html', 'utf-8', (err,data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", {content: data});
+  });
+});
+
+app.get("/about2", (req, res) => {
+  fs.readFile('site/about.html', "utf-8", (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", {content: data});
+  });
 });
 
 //render search page
 app.get("/search", (req, res) => {
-  res.render("base.liquid", {content: fs.readFileSync('site/search.html')});
+  fs.readFile('site/search.html', 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", {content: data});
+  });
 });
 
 //render table of contents page for collection
 app.get("/collection", (req, res) => {
-  res.render("toc.liquid", {content: "Collection", files: fs.readdirSync("site/collection/")});
+  fs.readdir('site/collection/', 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("toc.liquid", {files: data});
+  });
+});
+
+app.get('/test2', (req, res) => {
+  res.render("test.liquid", {title: "<h1>Dummy Page</h1>", author: "<h2>Suzanne Raybuck</h2>", source: "<p>My Brain</p>", content: "<p>PLEASE WORK</p>"})
 });
 
 /*iterate through collection folder and generate a new page for each TEI file
@@ -72,14 +110,24 @@ app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", {filename: req.params.file+".xml"});
 });
 
-
-
-  
-
 //testing with reading files
-app.get('/test', (req, res) => {
-  
-  var content = new Object ();
+/*app.get('/test', (req, res) => {
+  fs.readFile('site/anthem.txt', 'utf-8', (err, data) => {
+    split = data.split("<p>");
+    console.log(split)
+    content = {};
+    fields = ["title", "author", "source", "content"]
+    split.forEach( (val) => {
+      content[fields] = split[val];
+    });
+    //JSON.stringify(content);
+    
+    
+  });
+  //this needs to get modularized into a more generic method 
+  //so i dont endlessly repeat similar chunks of code
+  //also, can i cut out the mid array for simplicity??
+  /*var content = new Object ();
   mid = [];
   raw = fs.readFileSync('site/anthem.txt', 'utf-8').split("\n");
   for (i in raw){
@@ -89,29 +137,9 @@ app.get('/test', (req, res) => {
   content.title = mid[1];
   content.author = mid[2];
   content.source = mid[3];
-  
-  //content.push()
-  //console.log(content[0]);
-  /*var data = new Object ();
-  
-  data.layout = "poem";
-  data.title = "Anthem for Doomed Youth";
-  data.author = "Wilfred Owen";
-  data.source = "Poems by Wilfred Owen (1921)";
-  /*{
-    layout: "poem",
-    title: "Anthem for Doomed Youth",
-    author: "Wilfred Owen",
-    source: "Poems by Wilfred Owen (1921)"
-  }*/
-  /*console.log(typeof data);
-  console.log(data);
-  console.log(data.title)*/
-  //console.log(data[title]);
 
-
-  res.render("test.liquid", content);
-});
+  res.render("test.liquid", content);*/
+//});
 
 /*
 Testing with different filetypes going into collection page
