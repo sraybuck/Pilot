@@ -2,7 +2,7 @@
   "name": "Pilot",
   "version": "1.0.0",
   "description": "Web app using CETEIcean and liquid templating to create an easy to use interface for presenting digital editions",
-  "main": "src/CETEI.js",
+  "main": "server.js",
   "keywords": [],
   "author": "Suzanne Raybuck",
   "license": "BSD-2-Clause",
@@ -22,8 +22,7 @@
     "terser": "^3.17.0"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "dev": "npm run build && http-server -p 8888 & onchange src -- npm run build"
+    "start": "node server.js & node index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
