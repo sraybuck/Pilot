@@ -39,7 +39,8 @@ var store = [{% for text in site.texts %}{
 {% unless forloop.last %},{% endunless %}{% endfor %}]
 
 // Query
-var qd = {}; // Gets values from the URL
+var qd = {}; 
+// Gets values from the URL
 location.search.substr(1).split("&").forEach(function(item) {
     var s = item.split("="),
         k = s[0],
