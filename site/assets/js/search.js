@@ -36,7 +36,10 @@ function doSearch() {
     resultdiv.append('<p class="">Found '+result.length+' results</p>');
   }
 }
-
+$.get("../../doc.json").done((data,err) => {
+  console.log(data);
+  index.addDoc(data);
+});
 $(document).ready(function() {
   $('input#search').on('keyup', doSearch);
 });
