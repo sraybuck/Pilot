@@ -9,16 +9,17 @@
   </head>
   <body>
     {% include 'nav.liquid' %}
-  <div class="container">
-    <div id="content">
-          {% block content %}{{content}}{% endblock %}
+    <div class="container">
+      <div id="content">
+        {% block content %}{{content}}{% endblock %}
+      </div> 
     </div>
-  </div>
-  <div id="footer">
+    <div id="footer">
     <div class="container">
       <p id="test"> &#169; Whatever Liscence We Want 2020</p>
-    </div>
+      </div>
   </div>
   </body>
-   <script src="/assets/js/resize.js" type="text/javascript" ></script>
+  
+  <script src="/assets/js/resize.js" type="text/javascript" ></script>
 </html>
