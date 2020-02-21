@@ -1,3 +1,4 @@
+/*CETEIcean output styling*/
 tei-hyperdiv {
   display: none;
 }
@@ -23,26 +24,35 @@ tei-stage{
 tei-fw{
   display: none;
 }
-#TEI {
-  padding-top: 2em;
+tei-div > tei-head{
+  text-indent: 0em;
 }
+#TEI {
+  padding: 2em 1em 2em 1em;
+}
+/*general styles*/
 html{
   margin: 0px;
+  height: 100%;
   padding: 0px;
   font-family: 'Lato', sans-serif;
+   /*the reason this is set to hidden is because theres jQuery that makes the display 
+  jump around a little while the page is loading. This CSS hides the content until jQuery
+  tells it to un-hide it when every thing has loaded properly*/
+  visibility: hidden;
 }
-#annotation{
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  color: #F27405;
+body {
+  margin: 0px;
+  width: 100%;
 }
 .container {
   width: 80%;
+  height: 80%;
   margin: 0 auto;
   overflow: hidden;
 }
-.navbg{
+  /*Nav bar styling*/
+#navbg{
   background-color: #34b4eb;
 }
 ul.nav{
@@ -54,7 +64,6 @@ ul.nav{
   overflow: hidden;
   background-color: #34b4eb;
 }
-
 ul.nav li {
   float: left;
 }
@@ -79,20 +88,14 @@ ul.nav li a.active {
   color: 	#383838;
   background-color: #3483eb;
 }
-input {
-  border-radius: .2em;
-  font-family: inherit;
-  font-size: 1.25em;
-  padding: 0.5em;
-  margin: .7em 0em .7em 0em;
-  width: 90%;
+ /*Annotation styling*/
+#annotation{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  color: #F27405;
 }
-.result li{
-  list-style: none;
-}
-.results{
-  line height: 1.2em;
-}
-.result p{
-  margin: 0px;
+/*Footer styles*/
+#footer{
+  background-color: #34b4eb;
 }
