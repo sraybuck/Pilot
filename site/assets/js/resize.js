@@ -1,7 +1,6 @@
 function changeHeight() {
     //declare height variables for comparison
     var windowH = $(window).height();
-    
     var contentH = $("#content").height();
     
     //compare if window is larger than content, resize content accordingly
@@ -19,3 +18,4 @@ function changeHeight() {
     document.getElementsByTagName("html")[0].style.visibility = "visible";
 }
 const resize = setInterval(changeHeight, 500);
+
