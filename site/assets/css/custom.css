@@ -51,6 +51,10 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
+h1{
+  margin: 0px;
+  padding: .5em 0em .5em 0em;
+}
   /*Nav bar styling*/
 #navbg{
   background-color: #34b4eb;
