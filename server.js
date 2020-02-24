@@ -24,15 +24,29 @@ app.use(express.static('site'));
 
 /*BASIC ANATOMY OF A PILOT ROUTE
 
-app.get("URL_COMPONENT", (req, res) => {
-  res.render("TEMPLATE.LIQUID", {content: "CONTENT_YOU_WANT"});
+app.get("URL_COMPONENT", (req, res) => {                            //this creates the route
+  fs.readFile('PATH OF FILE', 'utf-8', (err, data) => {             //this loads the html files
+    if (err){                                                       //this checks if theres an error reading the html file
+      throw err;
+    }
+    res.render("TEMPLATE.LIQUID", {content: "CONTENT_YOU_WANT"});   //loads the template that the html gets input into
+  })
 });
 
-Essentially, pick something to go on the end of your base url for URL_COMPONENT
+Essentially, first the program creates a route or url for the content. Then it reads the filesystem and loads the file content
+from the html file you want to display, then it renders the template you specify and loads the html content. The reason it
+is nested is because of node uses asynchronous programming. Asynchronous programming basically does not execute each function
+in sequence like most programming languages, it can execute multiple functions at once without waiting for the previous one
+to be completed before starting the next one. Therefore, if the next function depends on information from the last, like how we need
+to fully load data from the html before putting it into a template, we nest the functions within each other so they'll execute in sequence.
 
-Then specify which template you want to load, we use base.liquid for all basic pages and page.liquid for TEI pages
-
-Then tell liquid what content you want rendered inside the {content} area of the template you selected. We specify html content by using the fs module for most of our base pages ( ex. fs.readFileSync('site/home.html')).
+HOW TO USE THESE ROUTES
+1. Pick something to go on the end of your base url for URL_COMPONENT
+2. In the fs.readFile paramteres, make the first parameter the path of the file you want to display such as home.html
+3. In the render function,  specify which template you want to load, we use base.liquid for all basic pages and page.liquid for TEI pages
+4. Then tell liquid what content you want rendered inside the {content} area of the template you selected.
+If you want to load the file you had previously specified, just put "data" because data is the variable that 
+currently stores the content of that file 
 
 Keep in mind that different liquid templates will have different places where {content} is loaded or other liquid variables that you can pass information to. For example, the page.liquid does not have a {content} variable; instead it has a {filename} variable that you pass a .xml file to in order to run CETEIcean.*/
 
@@ -59,16 +73,6 @@ app.get("/contact", (req, res) => {
 //render about page
 app.get("/about", (req, res) => {
   fs.readFile('site/about.html', 'utf-8', (err, data) => {
-    if (err) {
-      throw err;
-    }
-    res.render("base.liquid", { content: data });
-  });
-});
-
-//render search page
-app.get("/search", (req, res) => {
-  fs.readFile('site/search.html', 'utf-8', (err, data) => {
     if (err) {
       throw err;
     }

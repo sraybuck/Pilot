@@ -35,15 +35,14 @@ For a quick setup, simply place all your TEI files inside of site/collection/ an
 │   │   ├── images/
 │   │   └── js/
 │   │       ├── CETEI.js (CETEIcean script)
-│   │       ├── behaviors.js (behaviors for CETEIcean script)
-│   │       ├── elasticlunr.min.js (searching)
-│   │       └── search.js (searching)
+│   │       ├── resize.js (resizes pages to take up whole screen regardless of content)
+│   │       └──  behaviors.js (behaviors for CETEIcean script)
+│   │       
 │   ├── collection/ (WHERE THE TEI FILES GO)
 │   │  └── TEI FILES GO HERE.xml
 │   ├── about.html
 │   ├── contact.html
-│   ├── home.html
-│   └── search.html
+│   └── home.html
 └── views/ (all templates for the site)
     ├── base.liquid (boilerplate html code)
     ├── nav.liquid (navigation menu)
@@ -58,9 +57,14 @@ In order to generate a typical page of content, the server.js file will use the 
 
 For example, here is the code that renders the base page:
 ```
-  app.get("/", (req, res) => {
-    res.render("base.liquid", {content: fs.readFileSync('site/home.html')});
-    });
+app.get("/", (req, res) => {
+  fs.readFile('site/home.html', 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", { content: data });
+  });
+});
 ```
 There is more information and examples of this commented within the server.js file.
 
