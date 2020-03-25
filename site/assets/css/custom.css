@@ -30,6 +30,16 @@ tei-div > tei-head{
 #TEI {
   padding: 2em 1em 2em 1em;
 }
+tei-lg{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+tei-p{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
 /*general styles*/
 html{
   margin: 0px;
