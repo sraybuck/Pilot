@@ -10,6 +10,8 @@ var { Liquid } = require('liquidjs');
 var engine = new Liquid();
 //use express for server
 var app = express();
+//specify port as 3000 or whatever heroku wants
+var port = process.env.PORT || 3000;
 //declare app's engine as liquid
 app.engine('liquid', engine.express());
 
@@ -106,7 +108,7 @@ app.use((req, res) => {
 });
 
 //tell server where to run on and startup log
-app.listen(3000, () => {
+app.listen(port, () => {
 
   console.log("Application started on port 3000");
 });
