@@ -20,6 +20,10 @@ tei-figdesc {
 tei-stage{
   font-size: 1em;
   text-decoration: underline;
+  text-align: right;
+}
+tei-castitem{
+  text-decoration: solid;
 }
 tei-fw{
   display: none;
@@ -30,7 +34,7 @@ tei-div > tei-head{
 #TEI {
   padding: 2em 1em 2em 1em;
 }
-tei-lg{
+tei-l{
   margin-top: 1em;
   margin-bottom: 1em;
   margin-left: 2em;
