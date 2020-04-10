@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Letter from Thomas Campbell to Henry, Lord Cockburn</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Unpublished, for CETEIcean behaviors test</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>FSU's Digital Library: <ref>http://diginole.lib.fsu.edu/islandora/object/fsu%3A685380</ref></p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <opener>
+            <dateline><placeName>London</placeName> <date when="1828-07-02">July 2ᵈ 1828</date></dateline>
+            <salute>My Dear Cockburn</salute>
+         </opener>
+         <p>I have too much reliance on your 
+            <lb/><choice><orig>antient</orig><reg>ancient</reg></choice> friendship to make you any long apology
+            <lb/> for introducing to you a young English friend to
+            <lb/>whom any casual attention you can pay will be doing 
+            <lb/>me a gratifying kindness―This will be <unclear cert="high">delivered</unclear> to you
+            <lb/>by <persName>Mʳ Adams</persName> the son of <unclear cert="low">Commissioner</unclear> Adams―He is a
+            <lb/>young man intended for the church of the most respectable
+            + amiable character―I have known his family since he was
+            <lb/>born—&amp; I think it but right in commending him to your
+            <lb/><unclear cert="medium">friendship</unclear> as he passes through <unclear cert="low">Edingh</unclear> to mention that
+            
+            <pb/>
+            
+            <lb/>I introduce him not as a common acquaintance but
+            <lb/>as a person in whose happiness I am very much <unclear cert="medium">interested.</unclear>
+            <lb/>He + his family are Tories but in spite of this I have
+            <lb/>been on terms of mutual regard with them for three
+            <lb/>generations—The young man himself has something
+            <lb/>in his nature that will now allow him to be an
+            <lb/><emph rend="underscore">illiberal</emph> &amp; therefore I like to introduce him among
+            <lb/>the Whigs—as I believe that intercourse with them
+            <lb/>will insensibly conciliate &amp; alter his hereditary feelings
+            <lb/>in polities—
+         </p>
+         <p>I have not forgot your kindess in interfer­
+            <lb break="no"/>­ing with <unclear cert="low">Wardlaw</unclear>—It did much good—I trust this
+            <lb/>will find you + yours all well—I remain
+         </p>
+         <closer>
+            <signed>My dear Cockburn
+               <lb/>with very warm + old recollections
+               <lb/>yours truly <persName>T. Campbell</persName>
+            </signed>
+         </closer>
+         
+         <pb/>
+         
+         <postscript>
+            <p>P.S. Will you permit me to include in my introduction
+               <lb/><persName>Mʳ Barber</persName> the College Companion + fellow <unclear cert="medium">travel­</unclear>
+               <lb/>­er of <persName>Mʳ Adams</persName>—
+            </p>
+         </postscript>
+      </body>
+  </text>
+</TEI>
