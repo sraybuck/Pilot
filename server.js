@@ -21,8 +21,13 @@ app.set('views', path.resolve(__dirname, "views"));
 //set the view engine as liquid
 app.set('view engine', 'liquid');
 
-//tell app where the static resources are, from now on when there are relative links within the html of the website, it will use site as the root folder. Within this file, we still use the directory above site as the root.
+//tell app where the static resources are, from now on when there are relative links within the html of the website,
+// it will use site as the root folder. Within this file, we still use the directory above site as the root.
 app.use(express.static('site'));
+
+app.use('/assets', express.static('assets'));
+
+var baseurl = "http://localhost:3000/";
 
 /*BASIC ANATOMY OF A PILOT ROUTE
 
@@ -58,7 +63,7 @@ app.get("/", (req, res) => {
     if (err) {
       throw err;
     }
-    res.render("base.liquid", { content: data });
+    res.render("base.liquid", { content: data, baseurl: baseurl });
   });
 });
 
@@ -68,7 +73,7 @@ app.get("/contact", (req, res) => {
     if (err) {
       throw err;
     }
-    res.render("base.liquid", { content: data })
+    res.render("base.liquid", { content: data, baseurl: baseurl })
   });
 });
 
@@ -78,7 +83,7 @@ app.get("/about", (req, res) => {
     if (err) {
       throw err;
     }
-    res.render("base.liquid", { content: data });
+    res.render("base.liquid", { content: data, baseurl: baseurl });
   });
 });
 
@@ -88,8 +93,27 @@ app.get("/collection", (req, res) => {
     if (err) {
       throw err;
     }
-    res.render("toc.liquid", { files: data });
+    res.render("toc.liquid", { files: data, baseurl: baseurl });
   });
+});
+
+app.get("/collection/:dirname", (req, res) => {
+  fs.readdir('site/collection/'+req.params.dirname, 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("toc.liquid", { files: data, baseurl: baseurl });
+  });
+});
+
+app.get("/collection/deepfreeze/:file", (req, res) => {
+  res.render("page.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
+});
+app.get("/collection/drama/:file", (req, res) => {
+  res.render("drama.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
+});
+app.get("/collection/letter/:file", (req, res) => {
+  res.render("letter.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
 });
 
 /*iterate through collection folder and generate a new page for each TEI file
@@ -97,9 +121,9 @@ app.get("/collection", (req, res) => {
 The ":" specifies a dummy variable "file" that represents each item that matches that pattern inside the collection folder.
 
 Within the liquid brackets, 'req.params.file+".xml"'' refers back to the file dummy variable and appends a .xml extension to it to get the right filename to pass to CETEIcean*/
-app.get('/collection/:file', (req, res) => {
+/*app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", { filename: req.params.file + ".xml" });
-});
+});*/
 
 //render 404 page
 app.use((req, res) => {
