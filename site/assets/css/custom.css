@@ -16,15 +16,7 @@ tei-head {
 }
 tei-figdesc {
   display: none;
-}
-tei-stage{
-  font-size: 1em;
-  text-decoration: underline;
-  text-align: right;
-}
-tei-castitem{
-  text-decoration: solid;
-}
+}c
 tei-fw{
   display: none;
 }
@@ -33,16 +25,6 @@ tei-div > tei-head{
 }
 #TEI {
   padding: 2em 1em 2em 1em;
-}
-tei-l{
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 2em;
-}
-tei-p{
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 2em;
 }
 /*general styles*/
 html{
