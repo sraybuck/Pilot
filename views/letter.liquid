@@ -10,23 +10,22 @@
     let choice = myButton.previousSibling.previousSibling;
     //get children of choice
     let children = choice.childNodes;
+    let orig = children[0];
+    let reg = children[1];
+    style = document.createAttribute("style");
+    style.value = "display: none;";
     //if the button is inactive, execute this
     if(myButton.class == "inactive"){
+      console.log("inactive");
       //get text from orig
-      let orig = children[0].textContent;
-      //swap
-      children[0].textContent = children[1].textContent;
-      children[1].textContent = orig;
-      //swap class to active
+      orig.removeAttribute("style");
+      reg.setAttributeNode(style);
       myButton.class = "active";
     //if the button is active, execute this
-    }else if(myButton.class = "active"){
-      //get text from orig, which was from reg originally
-      let reg = children[0].textContent;
-      //swap
-      children[0].textContent = children[1].textContent;
-      children[1].textContent = reg;
-      //swap class to inactive
+    }else{
+      console.log("active");
+      reg.removeAttribute("style");
+      orig.setAttributeNode(style);
       myButton.class = "inactive";
     }
   };
@@ -62,21 +61,22 @@
         elt.setAttributeNode(style);
       },
       "choice": function(elt){
+        let children = elt.children;
+        let reg = children[1];
+        display = document.createAttribute("style");
+        display.value = "display:none;";
+        reg.setAttributeNode(display);
         //create button with text "swap choice"
         let button = document.createElement("button");
         let text = document.createTextNode("swap choice")
         button.appendChild(text);
         //create attributes
         let state = document.createAttribute("class");
-        let style = document.createAttribute("style");
         let click = document.createAttribute("onclick");
         //start button as class "inactive"
         state.value = "inactive";
-        //make it have 20px size
-        style.value = "padding-left: 10px; padding-right: 10px; margin-left: 50px;";
         //onclick, run the swapping function and pass it the button element
         click.value = "swapping(this)";
-        button.setAttributeNode(style);
         button.setAttributeNode(state);
         button.setAttributeNode(click);
         //insert the button after the text node following the choice
