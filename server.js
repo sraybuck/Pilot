@@ -27,7 +27,7 @@ app.use(express.static('site'));
 
 app.use('/assets', express.static('assets'));
 
-var baseurl = "http://localhost:3000/";
+var baseurl = "http://localhost:3000/" || "https://pilotnantucket.herokuapp.com/";
 
 /*BASIC ANATOMY OF A PILOT ROUTE
 
