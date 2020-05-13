@@ -97,23 +97,8 @@ app.get("/collection", (req, res) => {
   });
 });
 
-app.get("/collection/:dirname", (req, res) => {
-  fs.readdir('site/collection/'+req.params.dirname, 'utf-8', (err, data) => {
-    if (err) {
-      throw err;
-    }
-    res.render("toc.liquid", { files: data, baseurl: baseurl });
-  });
-});
-
-app.get("/collection/deepfreeze/:file", (req, res) => {
+app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
-});
-app.get("/collection/drama/:file", (req, res) => {
-  res.render("drama.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
-});
-app.get("/collection/letter/:file", (req, res) => {
-  res.render("letter.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
 });
 
 /*iterate through collection folder and generate a new page for each TEI file
