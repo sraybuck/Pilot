@@ -3,13 +3,36 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>APPENDIX - Operation Deep Freeze Newsletter Volume 1 Issue 1</title>
+            <title>Operation Deep Freeze Newsletter Volume 1 Issue 1</title>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <publisher>Florida State University, Office of Digital Research and Scholarship</publisher>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by/2.0/">Attribution 2.0 Generic (CC BY 2.0)</licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
-            <p>Information about the source</p>
+            <msDesc>
+               <msIdentifier>
+                  <placeName>Tallahassee, Florida</placeName>
+                  <institution>Florida State University</institution>
+                  <!-- INCLUDE (as collection) -->
+                  <collection>Robert E. Hancock Jr. Antarctic Collection</collection>
+                  <!-- INCLUDE (as iid) -->
+                  <idno type="IID">FSU_MSS_1976022_B07_F01_V1I1</idno>
+                  =
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <!-- INCLUDE (as title) -->
+                     <title>Operation Deep Freeze Newsletter Volume 1 Issue 1</title>
+                     <!-- INCLUDE (as author) -->
+                     <author>United States. Naval Support Force, Antarctica</author>
+                     <!-- INCLUDE  (as docdate; @when)-->
+                     <docDate when="1975-04-19">April 8, 1957</docDate>
+                  </msItem>
+               </msContents>
+            </msDesc>
          </sourceDesc>
       </fileDesc>
    </teiHeader>
