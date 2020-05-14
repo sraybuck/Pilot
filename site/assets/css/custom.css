@@ -94,6 +94,24 @@ ul.nav li a.active {
   right: 50px;
   color: #F27405;
 }
+/*Search bar styling*/
+input {
+  border-radius: .2em;
+  font-family: inherit;
+  font-size: 1.25em;
+  padding: 0.5em;
+  margin: .7em 0em .7em 0em;
+  width: 90%;
+}
+.result li{
+  list-style: none;
+}
+.results{
+  line-height: 1.2em;
+}
+.result p{
+  margin: 0px;
+}
 /*Footer styles*/
 #footer{
   background-color: #34b4eb;
