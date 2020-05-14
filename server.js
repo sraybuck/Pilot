@@ -87,6 +87,16 @@ app.get("/about", (req, res) => {
   });
 });
 
+//render search page
+app.get("/search", (req, res) => {
+  fs.readFile('site/search.html', 'utf-8', (err, data) => {
+    if (err) {
+      throw err;
+    }
+    res.render("base.liquid", { content: data, baseurl: baseurl });
+  });
+});
+
 //render table of contents page for collection
 app.get("/collection", (req, res) => {
   fs.readdir('site/collection/', 'utf-8', (err, data) => {
