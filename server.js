@@ -107,10 +107,6 @@ app.get("/collection", (req, res) => {
   });
 });
 
-app.get('/collection/:file', (req, res) => {
-  res.render("page.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
-});
-
 /*iterate through collection folder and generate a new page for each TEI file
 
 The ":" specifies a dummy variable "file" that represents each item that matches that pattern inside the collection folder.
@@ -119,6 +115,10 @@ Within the liquid brackets, 'req.params.file+".xml"'' refers back to the file du
 /*app.get('/collection/:file', (req, res) => {
   res.render("page.liquid", { filename: req.params.file + ".xml" });
 });*/
+
+app.get('/collection/:file', (req, res) => {
+  res.render("page.liquid", { filename: req.params.file + ".xml" , baseurl: baseurl});
+});
 
 //render 404 page
 app.use((req, res) => {
